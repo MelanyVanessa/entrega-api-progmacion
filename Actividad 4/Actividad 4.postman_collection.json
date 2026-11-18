@@ -1,0 +1,62 @@
+{
+  "info": {
+    "name": "Actividad 4 - API con MySQL",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "base", "value": "http://localhost:3000" }],
+  "item": [
+    {
+      "name": "1. GET todos los productos",
+      "request": { "method": "GET", "url": "{{base}}/productos" }
+    },
+    {
+      "name": "2. GET producto por id",
+      "request": { "method": "GET", "url": "{{base}}/productos/1" }
+    },
+    {
+      "name": "3. POST crear producto",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Shampoo de cebolla\",\n  \"tipo\": \"Shampoo\",\n  \"precio\": 39000,\n  \"marca\": \"Origen Botanico\",\n  \"stock\": 12,\n  \"categoria_id\": 1\n}"
+        },
+        "url": "{{base}}/productos"
+      }
+    },
+    {
+      "name": "4. PUT reemplazar producto",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Shampoo profesional reparacion intensiva\",\n  \"tipo\": \"Shampoo\",\n  \"precio\": 71000,\n  \"marca\": \"Milagros\",\n  \"stock\": 15,\n  \"categoria_id\": 1\n}"
+        },
+        "url": "{{base}}/productos/1"
+      }
+    },
+    {
+      "name": "5. PATCH actualizar solo el stock",
+      "request": {
+        "method": "PATCH",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"stock\": 50\n}" },
+        "url": "{{base}}/productos/1"
+      }
+    },
+    {
+      "name": "6. DELETE eliminar producto",
+      "request": { "method": "DELETE", "url": "{{base}}/productos/26" }
+    },
+    {
+      "name": "404 - producto que no existe",
+      "request": { "method": "GET", "url": "{{base}}/productos/9999" }
+    },
+    {
+      "name": "Reto - productos de una categoria (JOIN)",
+      "request": { "method": "GET", "url": "{{base}}/categorias/1/productos" }
+    }
+  ]
+}

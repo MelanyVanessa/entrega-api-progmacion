@@ -1,0 +1,16 @@
+{
+  "name": "api-productos",
+  "version": "1.0.0",
+  "description": "API REST de productos (CRUD) con Express y MySQL",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env server.js",
+    "setup-db": "node --env-file=.env setup-db.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.3.0",
+    "mysql2": "^3.24.6"
+  }
+}
