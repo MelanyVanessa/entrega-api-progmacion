@@ -5,8 +5,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node --env-file=.env server.js",
-    "setup-db": "node --env-file=.env setup-db.js"
+    "start": "node --env-file=.env server.js"
   },
   "license": "ISC",
   "dependencies": {
